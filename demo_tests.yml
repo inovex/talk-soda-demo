@@ -1,0 +1,34 @@
+# Checks for bus_breakdown_and_delays table in postgres
+
+checks for bus_breakdown_and_delays:
+# Built-in metrics:
+  - row_count > 0
+  - missing_count(busbreakdown_id) = 0
+  - duplicate_count(busbreakdown_id) = 0
+  - freshness(last_updated_on::timestamp) < 1d
+  - invalid_count(breakdown_or_running_late) = 0:
+      valid values: [Running Late, Breakdown]
+
+# Custom metric
+  - last_updated_on_after_created_on = 0:
+      last_updated_on_after_created_on query: |
+        SELECT COUNT(*) 
+        FROM bus_breakdown_and_delays 
+        WHERE last_updated_on >= created_on
+      failed rows query: |
+        SELECT * 
+        FROM bus_breakdown_and_delays 
+        WHERE last_updated_on < created_on
+
+# Schema validation
+  - schema:
+      fail:
+        when required column missing:
+          - school_year
+          - busbreakdown_id
+          - incident_number
+        when wrong column type:
+          busbreakdown_id: Integer
+      warn:
+        when wrong column type:
+          incident_number: Integer
