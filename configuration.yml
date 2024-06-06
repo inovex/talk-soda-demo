@@ -1,0 +1,13 @@
+data_source demo_datasource:
+  type: postgres
+  host: localhost
+  port: "5432"
+  username: postgres
+  password: test
+  database: demo
+  schema: public
+
+soda_cloud:
+  host: cloud.soda.io
+  api_key_id: your_api_key
+  api_key_secret: your_api_key_secret
