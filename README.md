@@ -39,3 +39,10 @@
     jupyter notebook
     ```
 - Open the notebook file `soda_demo_notebook.pynb`
+
+### Setup Soda Cloud Account with API keys
+- Navigate to https://cloud.soda.io/signup and create a new Soda account (free 45-day trial)
+- Log in into your account and navigate to **your avatar** > **Profile** then access the **API keys** tab
+- Click the plus icon to generate new API keys
+- Save the API key values locally
+- Replace the values for `api_key_id` and `api_key_secret` in the `configuration.yml` with the generated values (Do not push the changes in the `configuration.yml` into repository)
