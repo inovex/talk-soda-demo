@@ -1,4 +1,6 @@
 # soda-demo
+- Project contains Soda Demo Codes in a Jupyter notebook which focuses mainly on functionalities of Soda Scans using the Soda Core Python library
+- Soda Core is here connected with Soda Cloud and considers as data source PostgreSQL
 
 ## Project Setup
 
