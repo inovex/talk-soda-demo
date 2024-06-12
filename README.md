@@ -11,7 +11,7 @@
 - In this demo we are considering PostgreSQL as data source
 - Setup PostgreSQL with docker locally with
     ```
-    sudo docker run --name postgresql1 -e POSTGRES_PASSWORD=test -v ${HOME}/postgres-data/:/    var/lib/postgresql/data -p 5432:5432 -d postgres:15.2
+    sudo docker run --name postgresql1 -e POSTGRES_PASSWORD=test -v ${HOME}/postgres-data/:/var/lib/postgresql/data -p 5432:5432 -d postgres:15.2
     ```
 
 ### Import downloaded data into datasource
