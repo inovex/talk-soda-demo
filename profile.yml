@@ -1,0 +1,8 @@
+discover datasets:
+  datasets:
+    - bus_breakdown_and_delays
+
+profile columns:
+  columns:
+    - exclude bus_breakdown_and_delays.%_on #exclude all date columns as profiling is not supported for date or time
+
